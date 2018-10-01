@@ -1,8 +1,7 @@
 class Enemy01 extends GameObject {
 
-PVector position;
   PVector velocity;
-  int size = 20;
+  int size = 30;
 
   Enemy01() {    //Create vector objects
     position = new PVector();
@@ -13,15 +12,7 @@ PVector position;
 
     //Create vector for velocity and set random direction
     velocity = new PVector();
-    velocity.y = random(10) - 5;
-  }
-
-  //Constructor with position arguments
-  public Enemy01 (int x, int y) {
-    position = new PVector(x, y);
-
-    velocity = new PVector();
-    velocity.y = random(10) - 5;
+    velocity.y = 4;
   }
 
   void update()
@@ -37,6 +28,7 @@ PVector position;
   void draw()
   {
     //Draw our ball on the screen
-    ellipse(position.x - size/2, position.y - size/2, size, size);
+    fill(168,168,168);
+    ellipse(position.x, position.y, size, size);
   }
 }
