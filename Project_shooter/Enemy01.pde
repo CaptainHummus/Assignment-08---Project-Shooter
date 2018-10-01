@@ -1,5 +1,4 @@
 class Enemy01 extends GameObject {
-  super();
 
 PVector position;
   PVector velocity;
@@ -38,6 +37,6 @@ PVector position;
   void draw()
   {
     //Draw our ball on the screen
-    ellipse(position.x - size/2, position.y - size/2, size, size);   
+    ellipse(position.x - size/2, position.y - size/2, size, size);
   }
 }
