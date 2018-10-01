@@ -1,20 +1,14 @@
-float playerSpeed = 8;
-PVector position;
+GameObjectManager gameStart;
 
 void setup() {
-size(700,1000);
-position = new PVector(width/2, height/2);
+size(650,900);
+gameStart = new GameObjectManager();
 
 }
 
 void draw() {
   background(0);
 
-  float xMovement = getAxisRaw("Horizontal") * playerSpeed;
-  float yMovement = getAxisRaw("Vertical") * playerSpeed;
-  position.x += xMovement;
-  position.y += yMovement;
-
-  ellipse(position.x,position.y, 40,40);
+  gameStart.update();
 
 }
