@@ -10,5 +10,7 @@ void draw() {
   background(0);
 
   gameStart.update();
+  // println(gameStart.timeSec);
+
 
 }

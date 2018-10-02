@@ -8,7 +8,7 @@ class Enemy01 extends GameObject {
 
     //Set random start pos
     position.x = random(0, width);
-    position.y = 0;
+    position.y = 10;
 
     //Create vector for velocity and set random direction
     velocity = new PVector();

@@ -2,7 +2,7 @@ boolean moveLeft;
 boolean moveRight;
 boolean moveUp;
 boolean moveDown;
-Boolean shoot;
+boolean shoot;
 
 void keyPressed() {
   if (key == CODED){
@@ -18,9 +18,10 @@ void keyPressed() {
     else if (keyCode == DOWN) {
       moveDown = true;
     }
-    if (key == 'z' ||key == 'Z'){
-      shoot = true;
-    }
+
+  }
+  if (key == 'z' ||key == 'Z'){
+    shoot = true;
   }
 }
 
@@ -38,9 +39,19 @@ void keyReleased() {
     else if (keyCode == DOWN) {
       moveDown = false;
     }
-    if (key == 'z' ||key == 'Z'){
-      shoot = true;
-    }
+
+  }
+  if (key == 'z' ||key == 'Z'){
+    shoot = false;
+  }
+}
+
+boolean shooting(){
+  if(shoot){
+    return true;
+  }
+  else{
+    return false;
   }
 }
 
