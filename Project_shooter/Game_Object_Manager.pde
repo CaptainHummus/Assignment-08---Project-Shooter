@@ -27,19 +27,34 @@ class GameObjectManager {
 
 
     for(int i = 0; i < enemyUnit; i++){
-      enemies01[i].update();
-      enemies01[i].draw();
-      collisionCheck = collisionDetection(enemies01[i], player1);
-      if (collisionCheck){
-        println("Collision!");
+      if (enemies01[i].active == true){
+        enemies01[i].update();
+        enemies01[i].draw();
+        collisionCheck = collisionDetection(enemies01[i], player1);
+        if (collisionCheck){
+          // enemies01[i].active = false;
+          println("Collision!");
+
+        }
       }
     }
+
     for(int i = 0; i < playerBullets.length; i++){
-      playerBullets[i].update();
-      playerBullets[i].draw();
+      if (playerBullets[i].active == true){
+        playerBullets[i].update();
+        playerBullets[i].draw();
+
+        for(int j = 0; j < enemyUnit; j++){
+          if (enemies01[j].active == true){
+            collisionCheck = collisionDetection(playerBullets[i], enemies01[j]);
+            if (collisionCheck){
+              enemies01[j].active = false;
+              playerBullets[i].active = false;
+            }
+          }
+        }
+      }
     }
-
-
   }
 
   void bulletManager(){
@@ -47,9 +62,9 @@ class GameObjectManager {
       playerBullets[bulletUnit] = new Bullet(player1.position);
       bulletUnit++;
       bulletCooldown = millis();
+
       if(bulletUnit == bulletLimit){
         bulletUnit = 0;
-
       }
     }
   }

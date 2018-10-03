@@ -2,6 +2,7 @@ class Enemy01 extends GameObject {
   PVector velocity;
 
   Enemy01() {    //Create vector objects
+    active = true;
     speed = 4;
     size = 30;
     position = new PVector();

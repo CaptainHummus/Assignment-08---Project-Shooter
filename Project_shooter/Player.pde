@@ -2,6 +2,7 @@ class Player extends GameObject {
 
 
   Player() {
+    active = true;
     speed = 4;
     size = 40;
     position = new PVector(width/2,height - 150);
