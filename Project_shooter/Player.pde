@@ -11,6 +11,7 @@ float playerSpeed = 4;
 
     position.x += xMovement;
     position.y += yMovement;
+    fill(120,120,255);
     ellipse(position.x,position.y, 40,40);
   }
 }

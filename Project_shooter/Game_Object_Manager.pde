@@ -21,18 +21,10 @@ class GameObjectManager {
 
   void update(){
     timeSec = millis() /1000;
-    playerShoot = shooting();
-    if(playerShoot && millis() - bulletCooldown > 500) {
-      playerBullets[bulletUnit] = new Bullet(player1.position);
-      bulletUnit++;
-      bulletCooldown = millis();
-      if(bulletUnit == (bulletLimit-1)){
-        bulletUnit = 1;
 
-      }
-    }
     player1.update();
     enemySpawner();
+    bulletManager();
 
     for(int i = 0; i < enemyUnit; i++){
       enemies01[i].update();
@@ -44,6 +36,19 @@ class GameObjectManager {
     }
 
 
+  }
+
+  void bulletManager(){
+    playerShoot = shooting();
+    if(playerShoot && millis() - bulletCooldown > 500) {
+      playerBullets[bulletUnit] = new Bullet(player1.position);
+      bulletUnit++;
+      bulletCooldown = millis();
+      if(bulletUnit == (bulletLimit-1)){
+        bulletUnit = 1;
+
+      }
+    }
   }
 
   void enemySpawner(){
