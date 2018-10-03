@@ -2,14 +2,13 @@ class Bullet extends GameObject{
 
   PVector velocity;
   int size = 5;
-  int bulletSpeed = -1;
+  int bulletSpeed = -4;
 
   Bullet(PVector playerPosition) {
     position = new PVector();
     position.x = playerPosition.x;
     position.y = playerPosition.y;
 
-    //Create vector for velocity and set random direction
     velocity = new PVector();
     velocity.y = bulletSpeed;
   }

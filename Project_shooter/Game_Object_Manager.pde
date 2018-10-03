@@ -6,6 +6,7 @@ class GameObjectManager {
   boolean playerShoot = false;
   int bulletLimit = 50;
   int bulletUnit = 0;
+  int bulletCooldown;
   Bullet[] playerBullets;
 
   Player player1;
@@ -25,6 +26,10 @@ class GameObjectManager {
     if(playerShoot) {
       playerBullets[bulletUnit] = new Bullet(player1.position);
       bulletUnit++;
+      if(bulletUnit == bulletLimit){
+        bulletUnit = 1;
+
+      }
     }
     player1.update();
     enemySpawner();
