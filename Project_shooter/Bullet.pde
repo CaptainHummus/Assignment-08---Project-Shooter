@@ -2,7 +2,7 @@ class Bullet extends GameObject{
 
   PVector velocity;
   int size = 5;
-  int bulletSpeed = -4;
+  int bulletSpeed = -7;
 
   Bullet(PVector playerPosition) {
     position = new PVector();
@@ -17,9 +17,9 @@ class Bullet extends GameObject{
   {
     position.y += velocity.y;
 
-    if (position.y < 0) {
-      size = 0;
-    }
+    // if (position.y < 0) {
+    //   size = 0;
+    // }
   }
 
   void draw()

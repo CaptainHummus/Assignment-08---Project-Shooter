@@ -1,5 +1,4 @@
 class Enemy01 extends GameObject {
-
   PVector velocity;
   int size = 30;
 
@@ -10,14 +9,12 @@ class Enemy01 extends GameObject {
     position.x = random(0, width);
     position.y = 10;
 
-    //Create vector for velocity and set random direction
     velocity = new PVector();
     velocity.y = 4;
   }
 
   void update()
   {
-    //Update our position
     position.y += velocity.y;
 
     if (position.y > height) {
@@ -27,7 +24,6 @@ class Enemy01 extends GameObject {
 
   void draw()
   {
-    //Draw our ball on the screen
     fill(168,168,168);
     ellipse(position.x, position.y, size, size);
   }

@@ -1,5 +1,6 @@
 class Player extends GameObject {
-float playerSpeed = 4;
+  float playerSpeed = 4;
+  float size = 40;
 
   Player() {
     position = new PVector(width/2,height - 150);
@@ -12,6 +13,6 @@ float playerSpeed = 4;
     position.x += xMovement;
     position.y += yMovement;
     fill(120,120,255);
-    ellipse(position.x,position.y, 40,40);
+    ellipse(position.x,position.y, size,size);
   }
 }
