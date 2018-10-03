@@ -13,13 +13,15 @@ class GameObjectManager {
   PVector bulletdump;
 
   GameObjectManager(){
+    //ugly bulletdump that spawns the entire array of bullets outside the screen
     bulletdump = new PVector(-10,-10);
     playerBullets = new Bullet[bulletLimit];
-    player1 = new Player();
-    enemies01 = new Enemy01[enemyLimit];
     for(int i =0 ; i < bulletLimit; i++){
       playerBullets[i] = new Bullet(bulletdump);
     }
+    player1 = new Player();
+    enemies01 = new Enemy01[enemyLimit];
+
   }
 
   void update(){
@@ -33,8 +35,8 @@ class GameObjectManager {
     for(int i = 0; i < enemyUnit; i++){
       enemies01[i].update();
       enemies01[i].draw();
-      collisionCheck = collisionDetection(player1, enemies01[i]);
-      // println(collisionCheck);
+      collisionCheck = collisionDetection(enemies01[i], player1);
+      println(collisionCheck);
     }
     for(int i = 0; i < playerBullets.length; i++){
       playerBullets[i].update();
