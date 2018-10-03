@@ -24,7 +24,6 @@ class Bullet extends GameObject{
 
   void draw()
   {
-    //Draw our ball on the screen
     fill(255,0,0);
     ellipse(position.x, position.y, size, size);
   }

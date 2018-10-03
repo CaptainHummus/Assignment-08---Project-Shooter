@@ -6,7 +6,7 @@ class GameObjectManager {
   boolean playerShoot = false;
   int bulletLimit = 50;
   int bulletUnit = 0;
-  int bulletCooldown;
+  int bulletCooldown = 0;
   Bullet[] playerBullets;
 
   Player player1;
@@ -22,11 +22,11 @@ class GameObjectManager {
   void update(){
     timeSec = millis() /1000;
     playerShoot = shooting();
-    println(playerShoot);
-    if(playerShoot) {
+    if(playerShoot && millis() - bulletCooldown > 500) {
       playerBullets[bulletUnit] = new Bullet(player1.position);
       bulletUnit++;
-      if(bulletUnit == bulletLimit){
+      bulletCooldown = millis();
+      if(bulletUnit == (bulletLimit-1)){
         bulletUnit = 1;
 
       }
