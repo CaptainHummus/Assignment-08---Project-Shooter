@@ -1,16 +1,17 @@
 class Enemy01 extends GameObject {
   PVector velocity;
-  int size = 30;
 
   Enemy01() {    //Create vector objects
+    speed = 4;
+    size = 30;
     position = new PVector();
 
     //Set random start pos
     position.x = random(0, width);
-    position.y = 10;
+    position.y = 100;
 
     velocity = new PVector();
-    velocity.y = 4;
+    velocity.y = speed;
   }
 
   void update()
