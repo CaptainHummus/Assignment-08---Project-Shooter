@@ -1,6 +1,5 @@
 class Player extends GameObject {
-  float playerSpeed = 4;
-  float size = 40;
+  float playerSpeed = 4, size = 40;
 
   Player() {
     position = new PVector(width/2,height - 150);

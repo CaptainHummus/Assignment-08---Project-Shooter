@@ -1,8 +1,4 @@
-boolean moveLeft;
-boolean moveRight;
-boolean moveUp;
-boolean moveDown;
-boolean shoot;
+boolean moveLeft, moveRight, moveUp, moveDown, shoot;
 
 void keyPressed() {
   if (key == CODED){

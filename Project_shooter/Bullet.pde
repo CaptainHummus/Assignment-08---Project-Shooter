@@ -1,8 +1,7 @@
 class Bullet extends GameObject{
 
   PVector velocity;
-  int size = 5;
-  int bulletSpeed = -7;
+  int size = 5, bulletSpeed = -7;
 
   Bullet(PVector playerPosition) {
     position = new PVector();

@@ -1,12 +1,6 @@
 class GameObjectManager {
-  int timeSec;
-  int enemyUnit = 0;
-  int enemyLimit = 500;
-  int bulletLimit = 50;
-  int bulletUnit = 0;
-  int bulletCooldown = 0;
-  boolean spawnCheck = false;
-  boolean collisionCheck = false;
+  int timeSec, enemyUnit = 0, enemyLimit = 500, bulletLimit = 50, bulletUnit = 0, bulletCooldown = 0;
+  boolean spawnCheck = false, collisionCheck = false;
   Player player1;
   Bullet[] playerBullets;
   Enemy01[] enemies01;
