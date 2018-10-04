@@ -1,5 +1,6 @@
 import processing.sound.*;
 SoundFile music;
+
 int score = 0;
 boolean gameStart = false;
 String str1 = "CLICK TO START";
