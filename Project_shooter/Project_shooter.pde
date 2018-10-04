@@ -1,10 +1,14 @@
-GameObjectManager gameManager;
+import processing.sound.*;
+SoundFile music;
 int score = 0;
 boolean gameStart = false;
 String str1 = "CLICK TO START";
+GameObjectManager gameManager;
 
 void setup() {
 size(650,900);
+music = new SoundFile(this, "SpaceShooter.wav");
+music.play();
 gameManager = new GameObjectManager();
 frameRate(60);
 
