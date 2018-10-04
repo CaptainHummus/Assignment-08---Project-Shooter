@@ -1,6 +1,6 @@
 class GameObject{
   PVector position;
-  int size, r, g, b;
+  int size;
   float speed;
   boolean active;
 

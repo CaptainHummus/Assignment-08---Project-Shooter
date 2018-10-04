@@ -1,13 +1,14 @@
 class Bullet extends GameObject{
   PVector velocity;
+  int r,g,b;
 
   Bullet(PVector playerPosition, boolean player) {
     active = true;
     if (player){
       speed = -7;
-      r = 0;
-      g = 255;
-      b = 0;
+      r = 10;
+      g = 60;
+      b = 10;
     }
     else{
       speed = 7;

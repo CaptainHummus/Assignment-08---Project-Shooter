@@ -8,9 +8,6 @@ class Enemy01 extends GameObject {
     spawnTimeMark = millis();
     speed = 4;
     size = 30;
-    r = 168;
-    g = 168;
-    b = 168;
     position = new PVector();
     fish = loadImage("fish.png");
 
@@ -32,7 +29,6 @@ class Enemy01 extends GameObject {
   void draw(){
     noFill();
     noStroke();
-    ellipse(position.x, position.y, size, size);
     imageMode(CENTER);
     image(fish, position.x, position.y, 40, 40);
   }
