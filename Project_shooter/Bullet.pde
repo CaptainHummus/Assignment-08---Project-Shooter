@@ -1,9 +1,20 @@
 class Bullet extends GameObject{
   PVector velocity;
 
-  Bullet(PVector playerPosition) {
+  Bullet(PVector playerPosition, boolean player) {
     active = true;
-    speed = -7;
+    if (player){
+      speed = -7;
+      r = 0;
+      g = 255;
+      b = 0;
+    }
+    else{
+      speed = 7;
+      r = 255;
+      g = 0;
+      b = 0;
+    }
     size = 5;
     position = new PVector();
     position.x = playerPosition.x;
@@ -16,15 +27,11 @@ class Bullet extends GameObject{
   void update()
   {
     position.y += velocity.y;
-
-    // if (position.y < 0) {
-    //   size = 0;
-    // }
   }
 
   void draw()
   {
-    fill(255,0,0);
+    fill(r,g,b);
     ellipse(position.x, position.y, size, size);
   }
 }
