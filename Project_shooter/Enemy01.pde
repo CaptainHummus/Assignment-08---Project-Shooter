@@ -1,6 +1,7 @@
 class Enemy01 extends GameObject {
   PVector velocity;
   int spawnTimeMark;
+  PImage fish;
 
   Enemy01() {
     active = true;
@@ -11,6 +12,7 @@ class Enemy01 extends GameObject {
     g = 168;
     b = 168;
     position = new PVector();
+    fish = loadImage("fish.png");
 
     position.x = random(0, width);
     position.y = 0;
@@ -28,7 +30,10 @@ class Enemy01 extends GameObject {
   }
 
   void draw(){
-    fill(r,g,b);
+    noFill();
+    noStroke();
     ellipse(position.x, position.y, size, size);
+    imageMode(CENTER);
+    image(fish, position.x, position.y, 40, 40);
   }
 }

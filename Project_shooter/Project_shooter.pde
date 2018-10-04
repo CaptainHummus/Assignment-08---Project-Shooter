@@ -6,6 +6,7 @@ boolean gameStart = false;
 String str1 = "CLICK TO START";
 GameObjectManager gameManager;
 
+
 void setup() {
 size(650,900);
 music = new SoundFile(this, "SpaceShooter.wav");
@@ -16,7 +17,7 @@ frameRate(60);
 }
 
 void draw() {
-  background(0);
+  background(140, 200, 240);
   if (gameStart){
     gameManager.printer();
     gameManager.update();

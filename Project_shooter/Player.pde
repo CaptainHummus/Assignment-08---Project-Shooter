@@ -1,5 +1,6 @@
 class Player extends GameObject {
 
+  PImage boat;
 
   Player() {
     active = true;
@@ -9,6 +10,7 @@ class Player extends GameObject {
     g = 120;
     b = 255;
     position = new PVector(width/2,height - 150);
+    boat = loadImage("boat.png");
   }
 
   void update() {
@@ -18,12 +20,19 @@ class Player extends GameObject {
 
       position.x += xMovement;
       position.y += yMovement;
-      fill(r,g,b);
+      noFill();
+      noStroke();
       ellipse(position.x,position.y, size,size);
+      imageMode(CENTER);
+      image(boat, position.x, position.y, size, size);  
     }
     else{
-      fill(255,0,0);
+      noFill();
+      noStroke();
       ellipse(position.x,position.y, size,size);
+      tint(60,60,10);
+      imageMode(CENTER);
+      image(boat, position.x, position.y, size, size);
     }
   }
 }
