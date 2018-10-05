@@ -1,6 +1,6 @@
 class GameObjectManager {
   int timeSec, score = 0, enemyUnit = 0, enemyLimit = 1000,
-  bulletLimit = 30, playerBulletUnit = 0, enemyBulletUnit = 0,
+  bulletLimit = 200, playerBulletUnit = 0, enemyBulletUnit = 0,
   enemyBulletCooldown = 0, playerBulletCooldown = 0;
   boolean spawnCheck = false, collisionCheck = false;
   Player player1;
@@ -104,6 +104,7 @@ class GameObjectManager {
       spawnCheck = false;
     }
   }
+
   void printer()  {
     fill(0,255,0);
     textSize(16);

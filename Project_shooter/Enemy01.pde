@@ -1,5 +1,5 @@
 class Enemy01 extends GameObject {
-  PVector velocity;
+  // PVector velocity;
   int spawnTimeMark;
   PImage fish;
 
@@ -14,16 +14,16 @@ class Enemy01 extends GameObject {
     position.x = random(0, width);
     position.y = 0;
 
-    velocity = new PVector();
-    velocity.y = speed;
+    // velocity = new PVector();
+    // velocity.y = speed;
   }
 
   void update(){
-    position.y += velocity.y;
+    position.y += speed;
 
-    // if (position.y > height) {
-    //   position.y = 0;
-    // }
+    if (position.y > height) {
+      position.y = 0;
+    }
   }
 
   void draw(){
